@@ -263,6 +263,7 @@
     <Content Include="Themes\2015\css\prettify.css" />
     <Content Include="Themes\2015\css\slider.css" />
     <Content Include="Themes\2015\css\wysiwyg-color.css" />
+    <Content Include="Themes\2015\email_selection.html" />
     <Content Include="Themes\2015\error404.html" />
     <Content Include="Themes\2015\error500.html" />
     <Content Include="Themes\2015\faq.html" />
