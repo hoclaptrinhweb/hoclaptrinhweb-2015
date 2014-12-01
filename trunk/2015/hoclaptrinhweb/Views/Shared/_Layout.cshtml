@@ -3,28 +3,50 @@
 }
 <!DOCTYPE html>
 <html>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="/Scripts/detectie/html5shiv.js"></script>
+  <script src="/Scripts/detectie/respond.min.js"></script>
+<![endif]-->
 <head>
-    <meta charset="utf-8">
-    <title>Endless Admin</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- Bootstrap core CSS -->
-    <link href="@(themePath)css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="@(themePath)css/font-awesome.min.css" rel="stylesheet">
-    <!-- Pace -->
-    <link href="@(themePath)css/pace.css" rel="stylesheet">
-    <!-- Color box -->
-    <link href="@(themePath)css/colorbox/colorbox.css" rel="stylesheet">
-    <!-- Morris -->
-    <link href="@(themePath)css/morris.css" rel="stylesheet" />
-    <!-- Endless -->
-    <link href="@(themePath)css/endless.min.css" rel="stylesheet">
-    <link href="@(themePath)css/endless-skin.css" rel="stylesheet">
+    @if (IsSectionDefined("META_INC"))
+    {
+        @RenderSection("META_INC")
+    }
+    <meta name="bitly-verification" content="811bf9d76554" />
+    <meta content="INDEX,FOLLOW" name="robots" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="copyright" content="Công ty Cổ phần Thế Giới Di Động" />
+    <meta name="author" content="Công ty Cổ phần Thế Giới Di Động" />
+    <meta http-equiv="audience" content="General" />
+    <meta name="resource-type" content="Document" />
+    <meta name="distribution" content="Global" />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="GENERATOR" content="Công ty Cổ phần Thế Giới Di Động" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="publisher" href="https://plus.google.com/+Thegioididongdotcom/posts" />
+    <link rel="author" href="https://plus.google.com/+Thegioididongdotcom/posts" />
+    <meta property="og:site_name" content="hoclaptrinhweb.vn" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="fb:app_id" content="505429329544659" />
+    @if (IsSectionDefined("CSS_INC"))
+    {
+        @RenderSection("CSS_INC")
+    }
+    @{
+        @Html.AddClientStyle("~/" + themePath + "css/bootstrap/bootstrap.min.css", 0)
+        @Html.AddClientStyle("~/" + themePath + "css/font-awesome.min.css", 1)
+        @Html.AddClientStyle("~/" + themePath + "css/pace.min.css", 2)
+        @Html.AddClientStyle("~/" + themePath + "css/colorbox/colorbox.min.css", 3)
+        @Html.AddClientStyle("~/" + themePath + "css/morris.min.css", 4)
+        @Html.AddClientStyle("~/" + themePath + "css/endless.min.css", 5)
+        @Html.AddClientStyle("~/" + themePath + "css/endless-skin.min.css", 6)
+        @Html.GetClientStyles()
+    }
 </head>
 <body class="overflow-hidden">
-    <!-- Overlay Div -->
     <div id="overlay" class="transparent"></div>
     <!-- #region Theme-->
     <a href="" id="theme-setting-icon"><i class="fa fa-cog fa-lg"></i></a>
@@ -511,9 +533,6 @@
         </div>
         <!-- /.modal -->
     </div>
-    <!-- /wrapper -->
-    <a href="" id="scroll-to-top" class="hidden-print"><i class="fa fa-chevron-up"></i></a>
-    <!-- Logout confirmation -->
     <div class="custom-popup width-100" id="logoutConfirm">
         <div class="padding-md">
             <h4 class="m-top-none"> Do you want to logout?</h4>
@@ -523,7 +542,7 @@
             <a class="btn btn-danger logoutConfirm_close">Cancel</a>
         </div>
     </div>
-
+    <a href="" id="scroll-to-top" class="hidden-print"><i class="fa fa-chevron-up"></i></a>
     <!-- #region script-->
     <script src="@(themePath)js/jquery-1.10.2.min.js"></script>
     <script src="@(themePath)js/bootstrap/bootstrap.js"></script>
